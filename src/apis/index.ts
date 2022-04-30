@@ -8,7 +8,7 @@ export const getQQInfo = (qq: String) => {
   ) => {
     const cacheValue = localStorage.getItem(`${cachePrex}${qq}`);
     if (cacheValue) {
-      resolve(cacheValue);
+      resolve(JSON.parse(cacheValue));
     } else {
       reject(errorMsg);
     }
@@ -20,6 +20,7 @@ export const getQQInfo = (qq: String) => {
         if (data?.code !== 1) {
           getCacheValue(resolve, reject, data?.msg || "查询失败!");
         } else {
+          localStorage.setItem(`${cachePrex}${qq}`, JSON.stringify(data))
           resolve(data);
         }
       },
