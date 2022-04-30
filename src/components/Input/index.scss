@@ -1,0 +1,22 @@
+$error-color: red;
+.input {
+  &_value{
+    border: transparent;
+    border-bottom: 1px solid;
+    &:focus-visible {
+      outline: -webkit-focus-ring-color auto 0px;
+      border-bottom: 1px solid;
+    }
+  }
+  &_errorMsg {
+    color: $error-color;
+    font-size: 12px;
+    padding-left: 26px;
+  }
+  &.errorMsg {
+    .input_label,
+    .input_value {
+      color: $error-color;
+    }
+  }
+}

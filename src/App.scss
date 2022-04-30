@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  width: 600px;
+  margin: auto;
+  margin-top: 40px;
+  padding: 20px;
+  border: 1px solid rgb(223, 219, 219);
+  border-radius: 10px;
+  > div:not(:last-child){
+    margin-bottom: 10px;
+  }
+}
